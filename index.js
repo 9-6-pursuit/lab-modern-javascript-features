@@ -14,12 +14,12 @@ const moons = [
 
   You should not need to make any other changes to the code.
 */
-const organizeMoonsByPlanet = (moons) =>{
+const organizeMoonsByPlanet = ({name, planet} = moons) =>{
   const result = {};
   for (let moon of moons) {
     const name = moon.name;
     const planet = moon.planet;
-    //const {name, planet} = moon
+    
     if (result[planet]) {
       result[planet].push(name);
     } else {
@@ -57,17 +57,18 @@ const getClosestToPlanet = (moons) => {
 
   You should not need to make any other changes to the code.
 */
-const createMoon = (name, planet, distanceFromPlanetInKm) => {
+const createMoon = (name, planet, distanceFromPlanetInKm = "Unknown") => {
   if (!name || !planet) {
     return "Name and planet are required.";
   }
 
   distanceFromPlanetInKm = distanceFromPlanetInKm || "Unknown";
 
+
   return {
-    name: name,
-    planet: planet,
-    distanceFromPlanetInKm: distanceFromPlanetInKm,
+     name,
+    planet,
+    distanceFromPlanetInKm
   };
 }
 
