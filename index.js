@@ -64,25 +64,7 @@ const organizeMoonsByPlanet = (moons) => {
 //   return closest.name;
 // }
 
-// const getClosestToPlanet = (moons) => {
-//   const [closest, ...rest] = moons;
-//   for (let moon of rest) {
-//     if (moon.distanceFromPlanetInKm < closest.distanceFromPlanetInKm) {
-//       closest = moon;
-//     }
-//   }
-//   return closest.name;
-// };
 
-// const getClosestToPlanet = (moons) => {
-//   const [closest, ...rest] = moons;
-//   for (let moon of rest) {
-//     if (moon.distanceFromPlanetInKm < closest.distanceFromPlanetInKm) {
-//       closest = moon;
-//     }
-//   }
-//   return closest.name;
-// };
 
 const getClosestToPlanet = (moons) => {
   let [closest, ...rest] = moons;
