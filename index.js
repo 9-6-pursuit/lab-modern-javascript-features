@@ -14,12 +14,10 @@ const moons = [
 
   You should not need to make any other changes to the code.
 */
-const organizeMoonsByPlanet = ({name, planet} = moons) =>{
+const organizeMoonsByPlanet = (moons) =>{
   const result = {};
   for (let moon of moons) {
-    const name = moon.name;
-    const planet = moon.planet;
-    
+    const {name, planet} = moon
     if (result[planet]) {
       result[planet].push(name);
     } else {
@@ -27,7 +25,10 @@ const organizeMoonsByPlanet = ({name, planet} = moons) =>{
     }
   }
   return result;
-}
+} 
+
+
+
 
 /*
   To update this function, you should:
@@ -36,9 +37,10 @@ const organizeMoonsByPlanet = ({name, planet} = moons) =>{
 
   You should not need to make any other changes to the code.
 */
+
+
 const getClosestToPlanet = (moons) => {
-  let closest = moons[0];
-  const rest = moons.slice(1);
+  let [closest, ...rest] = moons
 
   for (let moon of rest) {
     if (moon.distanceFromPlanetInKm < closest.distanceFromPlanetInKm) {
@@ -47,7 +49,9 @@ const getClosestToPlanet = (moons) => {
   }
 
   return closest.name;
-}
+} 
+
+
 
 /*
   To update this function, you should:
@@ -66,7 +70,7 @@ const createMoon = (name, planet, distanceFromPlanetInKm = "Unknown") => {
 
 
   return {
-     name,
+    name,
     planet,
     distanceFromPlanetInKm
   };
