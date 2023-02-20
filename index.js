@@ -36,7 +36,6 @@ const organizeMoonsByPlanet = (moons) => {
 */
 const getClosestToPlanet = (moons) => {
   let [closest, ...rest] = moons;
-  const planetRadiusInKm = (planet) => planet.radiusInMiles * 1.609;
   for (let moon of rest) {
     if (moon.distanceFromPlanetInKm < closest.distanceFromPlanetInKm) {
       closest = moon;
@@ -58,15 +57,15 @@ createMoon = (name, planet, distanceFromPlanetInKm = "Unknown") => {
     return "Name and planet are required.";
   }
   return {
-    name
-    planet
-    distanceFromPlanetInKm
+    name,
+    planet,
+    distanceFromPlanetInKm,
   };
-  
+}
 
   
 module.exports = {
   organizeMoonsByPlanet,
   getClosestToPlanet,
-  createMoon,
+  createMoon
 };
