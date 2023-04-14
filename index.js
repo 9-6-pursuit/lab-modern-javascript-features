@@ -55,7 +55,7 @@ let getClosestToPlanet = (moons) => {
 
   You should not need to make any other changes to the code.
 */
-let createMoon = (name, planet, distanceFromPlanetInKm) => {
+let createMoon = (name, planet, distanceFromPlanetInKm = "Unknown") => {
   if (!name || !planet) {
     return "Name and planet are required.";
   }
@@ -63,11 +63,11 @@ let createMoon = (name, planet, distanceFromPlanetInKm) => {
   distanceFromPlanetInKm = distanceFromPlanetInKm || "Unknown";
 
   return {
-    name: name,
-    planet: planet,
-    distanceFromPlanetInKm: distanceFromPlanetInKm,
+    name,
+    planet,
+    distanceFromPlanetInKm,
   };
-}
+};
 
 module.exports = {
   organizeMoonsByPlanet,
